@@ -7,7 +7,7 @@
 
     <script src="//unpkg.com/d3"></script>
     <script src="//unpkg.com/aframe"></script>
-    <script src="../../dist/aframe-globe-component.min.js"></script>
+    <script src="dist/aframe-globe-component.min.js"></script>
     <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
     <style>
@@ -181,7 +181,7 @@
   <script>
 let dataArray; // Declare the variable in the outer scope
 
-fetch('../datasets/O3_data_IPCC.csv')
+fetch('datasets/O3_data_IPCC.csv')
   .then(res => res.text())
   .then(csv => d3.csvParse(csv, ({ Year, Scenario, Africa, 'Asia-Pacific Developed': AsiaPacificDeveloped, 'Eastern Asia': EasternAsia, Europe, Eurasia, 'Latin America and Caribbean': LatinAmericaCaribbean, 'Middle East': MiddleEast, 'North America': NorthAmerica, 'Southern Asia': SouthernAsia, 'South-East Asia and Developing Pacific': SouthEastAsiaDevelopingPacific, Global }) => ({
     Year: +Year,
