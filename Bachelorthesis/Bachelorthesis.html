@@ -911,7 +911,7 @@ function updateDataAndGlobe() {
 }
 
 // Start the interval
-const intervalId = setInterval(updateDataAndGlobe, interval);
+let intervalId = setInterval(updateDataAndGlobe, interval);
 
 </script>
 
@@ -982,9 +982,9 @@ button.addEventListener('click', () => {
     // Reset the index and restart the interval
     index = 0;
     intervalId = setInterval(updateDataAndGlobe, interval);
-
   });
 </script>
+
     <!-- GitHub Corner. -->
     <a href="https://github.com/alehrn/bachelor_thesis" class="github-corner">
       <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;">
