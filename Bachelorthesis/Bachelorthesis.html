@@ -154,10 +154,11 @@
   <!-- Add the year indicator -->
 <div id="year-indicator" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 24px; color: white;"></div>
 
+<!--
 <div></div>
 <button id="rerun-button">
 </button>
-
+-->
 <div style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%); padding: 20px;">
   <h1 style="font-size: 32px; color: white;">Ozone Concentration in Different Regions</h1>
 </div>
@@ -225,6 +226,9 @@ function processData() {
   const scenarioSelect = document.getElementById('scenarioSelect');
   scenarioSelect.addEventListener('change', function() {
   updateFilteredArray();
+  console.log(filteredArray)
+  clearInterval(intervalId)
+  intervalId = setInterval(updateDataAndGlobe, interval);
 });
 
 
@@ -913,6 +917,20 @@ function updateDataAndGlobe() {
 // Start the interval
 let intervalId = setInterval(updateDataAndGlobe, interval);
 
+//const rerunButton = document.getElementById('rerun-button');
+
+//rerunButton.addEventListener('click', () => {
+  // Clear the interval if it's running
+  //clearInterval(intervalId);
+  //console.log('IntervalID:', intervalId)
+  //console.log(interval)
+  //console.log(index)
+
+  // Reset the index and restart the interval
+  //index = 0;
+ // intervalId = setInterval(updateDataAndGlobe, interval);
+//});
+
 </script>
 
 <script>
@@ -972,18 +990,6 @@ button.addEventListener('click', () => {
 
 </script>
 
-<script>
-  const rerunButton = document.getElementById('rerun-button');
-
-  rerunButton.addEventListener('click', () => {
-    // Clear the interval if it's running
-    clearInterval(intervalId);
-
-    // Reset the index and restart the interval
-    index = 0;
-    intervalId = setInterval(updateDataAndGlobe, interval);
-  });
-</script>
 
     <!-- GitHub Corner. -->
     <a href="https://github.com/alehrn/bachelor_thesis" class="github-corner">
